@@ -16,7 +16,8 @@ fn main() {
         error!("Please specify [tcp/udp] [server/client] [addr:port].");
         std::process::exit(1);
     }
-    let protocol: &str = &args[2];
+    let protocol: &str = &args[1];
+    let role: &str = &args[2];
     let address = &args[3];
     match protocol {
         "tcp" => match role {
