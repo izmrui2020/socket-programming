@@ -32,10 +32,10 @@ fn main() {
         },
         "udp" => match role {
             "server" => {
-                //TODO:
+                udp_server::serve(address).unwrap_or_else(|e| error!("{}", e));
             }
             "client" => {
-                //TODO:
+                udp_client::communicate(address).unwrap_or_else(|w| error!("{}", w));
             }
             _ => {
                 missing_role();
